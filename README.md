@@ -1,2 +1,3 @@
 # docker-java
-Ubuntu 16.04 with Oracle Java 8
+Ubuntu 16.04 with Oracle Java 8 JRE (not JDK!)
+
