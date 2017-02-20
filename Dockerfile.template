@@ -6,15 +6,13 @@
 FROM ubuntu:xenial
 
 # parameters
-ARG JRE_MAJOR=
-ARG JRE_UPDATE=
-ARG JRE_BUILD=
+ARG JDK_URL
 
 # Install Java.
 RUN \
   apt-get update && \
   apt-get install -y wget && \
-  wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/"$JRE_MAJOR"u"$JRE_UPDATE"-b"$JRE_BUILD"/jre-"$JRE_MAJOR"u"$JRE_UPDATE"-linux-x64.tar.gz && \
+  wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" $JDK_URL && \
   mkdir -p /usr/lib/jvm/java-8-oracle && \
   tar -C /usr/lib/jvm/java-8-oracle --strip-components=1 -xvf *linux-x64.tar.gz && \
   update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/java-8-oracle/bin/java" 1 && \
