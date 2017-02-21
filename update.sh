@@ -1,9 +1,11 @@
 #!/bin/bash
 
-sed "s@ARG JDK_URL@ARG JDK_URL=$JDK_URL@g" Dockerfile.template > java/Dockerfile
+#http://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
+
+sed "s@ARG JRE_URL@ARG JRE_URL=$JRE_URL@g" Dockerfile.template > java/Dockerfile
 
 git add java/Dockerfile
-git commit -m "New java version $JDK_TAG"
-git tag -f $JDK_TAG
+git commit -m "New java version $JRE_TAG"
+git tag -f $JRE_TAG
 git push origin master
-git push -f origin $JDK_TAG
+git push -f origin $JRE_TAG
