@@ -6,7 +6,7 @@
 FROM ubuntu:xenial
 
 # parameters
-ARG JRE_URL=http://javadl.oracle.com/webapps/download/AutoDL?BundleId=233162_512cd62ec5174c3487ac17c61aaa89e8
+ARG JRE_URL=http://download.oracle.com/otn-pub/java/jdk/10.0.1+10/fb4372174a714e6b8c52526dc134031e/jdk-10.0.1_linux-x64_bin.tar.gz
 
 # Install Java.
 RUN \
